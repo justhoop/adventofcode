@@ -33,4 +33,14 @@ with open("day5/day5.txt", "r") as f:
     for line in f:
         seatids.append(seatid(line.removesuffix('\n')))
 
-print(sorted(seatids))
+seatids = sorted(seatids)
+
+#first answer
+print(seatids[len(seatids) - 1])
+
+#second answer
+x = seatids[0]
+for i in seatids:
+    if not x in seatids:
+        print(x)
+    x += 1
